@@ -19,6 +19,7 @@
     <nav aria-label="Điều hướng chính">
       <a href="#about">Giới thiệu</a>
       <a href="#likes">Âm nhạc</a>
+      <a href="#fun-facts">Fun facts</a>
       <a href="#corner">Góc nhỏ</a>
     </nav>
     <button class="theme-toggle" id="themeToggle" type="button" aria-label="Đổi giao diện" title="Đổi giao diện"><span id="themeIcon">☾</span></button>
@@ -116,6 +117,29 @@
             <button class="spotify-track" type="button" data-track="2"><span class="track-index">03</span><span><strong>toxic till the end</strong><small>ROSÉ</small></span><span class="track-play">▶</span></button>
           </div>
           <p class="playlist-footnote">Dùng hai nút điều hướng hoặc chọn trực tiếp một bài trong danh sách. Nhạc được phát qua Spotify.</p>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="fun-facts section-wrap section-block reveal" id="fun-facts">
+      <div class="section-heading"><p class="eyebrow">03 / LITTLE SECRETS</p><h2>Fun facts<br><span>about me.</span></h2></div>
+      <div class="fun-facts-content">
+        <p class="fun-facts-intro">Một chiếc thư bí mật nho nhỏ. Bấm vào phong bì để mở ra một fun fact ngẫu nhiên ✦</p>
+        <div class="envelope-scene">
+          <button class="envelope-button" id="envelopeButton" type="button" aria-expanded="false" aria-controls="funFactPaper" aria-label="Mở phong bì fun facts">
+            <span class="envelope-sparkle sparkle-left" aria-hidden="true">✦</span>
+            <span class="envelope-sparkle sparkle-right" aria-hidden="true">✧</span>
+            <span class="letter-paper" id="funFactPaper">
+              <span class="paper-stamp" aria-hidden="true">MN ✦</span>
+              <span class="paper-fact" id="funFactText">Bấm vào chiếc phong bì để khám phá một fun fact ✦</span>
+            </span>
+            <span class="envelope-back" aria-hidden="true"></span>
+            <span class="envelope-flap" aria-hidden="true"></span>
+            <span class="envelope-front" aria-hidden="true"></span>
+            <span class="envelope-heart" aria-hidden="true">♡</span>
+          </button>
+          <p class="envelope-hint" id="envelopeHint">OPEN A LITTLE SECRET <span aria-hidden="true">↗</span></p>
         </div>
       </div>
     </section>
