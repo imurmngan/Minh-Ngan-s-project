@@ -130,3 +130,45 @@ body.dark .music-cat-glow{background:#2a6595}
 @keyframes eq{from{transform:scaleY(.45)}to{transform:scaleY(1)}}
 @media(max-width:560px){.name-card{grid-column:span 1}.music-cat-button{min-height:235px}.song-card{grid-template-columns:82px 1fr;gap:12px}.song-cover{width:82px;height:92px}.song-sparkle{display:none}.song-info h3{font-size:.95rem}.music-note.note-one{left:12%}.music-note.note-two{right:11%}.music-note.note-three{left:10%}}
 @media(prefers-reduced-motion:reduce){.info-card,.name-card strong,.music-cat-button,.headphone-cat,.music-note,.cat-eye,.equalizer i{animation:none!important}}
+
+/* Mini Spotify-style player */
+.music-cat-button{outline:none;-webkit-tap-highlight-color:transparent}
+.music-cat-button:focus{outline:none}
+.music-cat-button:focus-visible{outline:2px solid #287fca;outline-offset:4px}
+.music-cat-button .headphone-cat{animation:catSway 4.2s ease-in-out infinite;transform-origin:50% 80%}
+.music-cat-button:active .headphone-cat{animation:catTap .38s ease-out}
+@keyframes catSway{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-8px) rotate(2deg)}}
+@keyframes catTap{0%{transform:scale(1) rotate(0)}45%{transform:scale(.92) rotate(-7deg)}100%{transform:scale(1) rotate(0)}}
+.spotify-player{background:#101512;color:#f7fff8;border-radius:20px;padding:18px;border:1px solid #27342c;box-shadow:0 18px 40px rgba(12,30,20,.16);overflow:hidden}
+.spotify-topline{display:flex;align-items:center;gap:9px;font:500 .62rem var(--mono);letter-spacing:.14em;color:#b6c6ba;margin:0 0 14px}
+.spotify-mark{font-size:1rem;color:#1ed760;text-shadow:0 0 12px rgba(30,215,96,.35)}
+.spotify-topline .equalizer{margin-left:auto}.spotify-topline .equalizer i{background:#1ed760}
+.spotify-current{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:17px;align-items:center}
+.spotify-art-wrap{min-width:0;overflow:hidden;border-radius:12px;background:#202820;min-height:152px}
+.spotify-art-wrap iframe{display:block;width:100%;height:152px;border:0;border-radius:12px;background:#202820}
+.spotify-track-copy{min-width:0;padding:3px 0}
+.spotify-track-copy .song-number{color:#9db5a4}
+.spotify-track-copy h3{font-size:clamp(1.1rem,2.2vw,1.55rem);line-height:1.25;letter-spacing:-.04em;margin:8px 0 5px;overflow-wrap:anywhere;color:#fff}
+.spotify-track-copy p{font-size:.82rem;color:#b4c2b8;margin:0 0 15px}
+.spotify-track-copy a{display:inline-flex;align-items:center;gap:8px;border-radius:30px;padding:9px 13px;background:#1ed760;color:#07180d;font-size:.72rem;font-weight:800}
+.spotify-track-copy a span{transition:transform .2s}.spotify-track-copy a:hover span{transform:translate(3px,-3px)}
+.spotify-controls{display:flex;justify-content:center;align-items:center;gap:25px;padding-top:13px;margin-top:15px;border-top:1px solid #2b372e}
+.spotify-controls button{border:0;border-radius:50%;width:40px;height:40px;background:#1ed760;color:#07180d;font-size:1rem;cursor:pointer;transition:transform .2s,background .2s}
+.spotify-controls button:hover{transform:scale(1.08);background:#58f28b}
+.spotify-controls button:focus-visible,.spotify-track:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.spotify-controls span{font:500 .65rem var(--mono);color:#aab8ae}
+.spotify-track-list{display:grid;gap:5px;margin-top:13px}
+.spotify-track{display:grid;grid-template-columns:32px 1fr 25px;gap:10px;align-items:center;text-align:left;border:1px solid transparent;background:transparent;color:var(--ink);padding:11px 13px;border-radius:11px;cursor:pointer;transition:background .2s,border-color .2s,transform .2s}
+.spotify-track:hover{background:var(--pale);transform:translateX(3px)}
+.spotify-track.active{background:#e3f8e9;border-color:#9be5b5}
+.track-index{font:500 .68rem var(--mono);color:#7892a8}
+.spotify-track strong,.spotify-track small{display:block}
+.spotify-track strong{font-size:.83rem;line-height:1.4}
+.spotify-track small{font-size:.7rem;color:var(--muted);margin-top:2px}
+.track-play{color:#178d48;opacity:0;transition:opacity .2s}.spotify-track:hover .track-play,.spotify-track.active .track-play{opacity:1}
+body.dark .spotify-track{color:var(--ink)}
+body.dark .spotify-track:hover{background:#1b3b56}
+body.dark .spotify-track.active{background:#173f2b;border-color:#287c4b}
+.playlist-footnote{margin-top:10px}
+@media(max-width:560px){.spotify-player{padding:13px}.spotify-current{grid-template-columns:1fr;gap:13px}.spotify-art-wrap,.spotify-art-wrap iframe{min-height:152px;height:152px}.spotify-track-copy{padding:0 2px}.spotify-track-copy h3{font-size:1.25rem}.spotify-controls{padding-top:10px}}
+@media(prefers-reduced-motion:reduce){.music-cat-button .headphone-cat,.music-cat-button:active .headphone-cat{animation:none!important}}
