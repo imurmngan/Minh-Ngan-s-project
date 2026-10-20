@@ -28,7 +28,7 @@
     <section class="hero section-wrap" id="home">
       <div class="hero-copy">
         <p class="eyebrow"><span class="status-dot"></span> PERSONAL SPACE / 2026</p>
-        <h1>xin chào,<br>đây là Minh Ngân <span class="wave">✦</span></h1>
+        <h1>Hi, mình là<br>Minh Ngân <span class="wave">✦</span></h1>
         <p class="hero-subtitle">một vài điều về bản thân</p>
         <div class="hero-actions">
           <a class="button button-primary" href="#about">Khám phá một chút <span aria-hidden="true">↘</span></a>
@@ -94,33 +94,30 @@
     <section class="music section-wrap section-block reveal" id="likes">
       <div class="section-heading"><p class="eyebrow">02 / ON REPEAT</p><h2>Âm nhạc<br><span>yêu thích.</span></h2></div>
       <div class="music-content">
-        <p class="music-intro">Một góc nhỏ dành cho những bài hát đang nằm trong playlist của Minh Ngân. Bấm vào mèo để mở danh sách nhé.</p>
+        <p class="music-intro">Một góc nhỏ dành cho những bài hát đang nằm trong playlist của Minh Ngân. Bấm vào mèo để mở mini player nhé.</p>
         <button class="music-cat-button" id="musicCatButton" type="button" aria-expanded="false" aria-controls="musicPlaylist">
           <span class="music-cat-glow" aria-hidden="true"></span>
           <span class="music-note note-one" aria-hidden="true">♪</span><span class="music-note note-two" aria-hidden="true">♫</span><span class="music-note note-three" aria-hidden="true">♬</span>
           <span class="headphone-cat" aria-hidden="true"><span class="cat-ear ear-left"></span><span class="cat-ear ear-right"></span><span class="cat-head"><span class="cat-eye eye-left"></span><span class="cat-eye eye-right"></span><span class="cat-nose"></span><span class="cat-mouth"></span><span class="cat-blush blush-left"></span><span class="cat-blush blush-right"></span><span class="cat-whiskers whiskers-left"></span><span class="cat-whiskers whiskers-right"></span></span><span class="headband"></span><span class="earcup cup-left"></span><span class="earcup cup-right"></span></span>
-          <span class="music-button-label">BẤM ĐỂ NGHE GU NHẠC <span>↗</span></span>
+          <span class="music-button-label">MỞ MINI PLAYER <span>↗</span></span>
         </button>
         <div class="music-playlist" id="musicPlaylist" hidden>
-          <div class="playlist-heading"><span>MY MINI PLAYLIST</span><span class="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i></span></div>
-          <article class="song-card">
-            <iframe class="song-cover" title="Ảnh bìa Attention trên Spotify" src="https://open.spotify.com/embed/track/5cF0dROlMOK5uNZtivgu50?utm_source=generator&amp;theme=0" loading="lazy" allow="encrypted-media" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-            <div class="song-info"><span class="song-number">01 / POP</span><h3>Attention</h3><p>Charlie Puth</p><a href="https://open.spotify.com/search/attention?flow_ctx=b5ce3cbc-3790-45bd-841b-01bd87fedafe%3A1792486353" target="_blank" rel="noopener noreferrer">Mở trên Spotify <span>↗</span></a></div>
-            <span class="song-sparkle" aria-hidden="true">✦</span>
-          </article>
-          <article class="song-card">
-            <iframe class="song-cover" title="Ảnh bìa Từng Quen trên Spotify" src="https://open.spotify.com/embed/track/7f4Qg1YqBvgIDqyVdRZ4o4?utm_source=generator&amp;theme=0" loading="lazy" allow="encrypted-media" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-            <div class="song-info"><span class="song-number">02 / V-POP</span><h3>Từng Quen</h3><p>Wren Evans, itsnk</p><a href="https://open.spotify.com/intl-vi/album/2M0vYJZddXn6qRpeVtGvDZ" target="_blank" rel="noopener noreferrer">Mở trên Spotify <span>↗</span></a></div>
-            <span class="song-sparkle" aria-hidden="true">✧</span>
-          </article>
-          <article class="song-card">
-            <iframe class="song-cover" title="Ảnh bìa toxic till the end trên Spotify" src="https://open.spotify.com/embed/track/3cgCBNO29q6BgxqHDA7peh?utm_source=generator&amp;theme=0" loading="lazy" allow="encrypted-media" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-            <div class="song-info"><span class="song-number">03 / POP</span><h3>toxic till the end</h3><p>ROSÉ</p><a href="https://open.spotify.com/search/toxic%20till%20the%20end" target="_blank" rel="noopener noreferrer">Mở trên Spotify <span>↗</span></a></div>
-            <span class="song-sparkle" aria-hidden="true">✦</span>
-          </article>
-          <p class="playlist-footnote">Chạm vào ảnh bìa để mở trình phát Spotify, hoặc chọn link của từng bài.</p>
+          <div class="spotify-player">
+            <div class="spotify-topline"><span class="spotify-mark">●</span><span>NOW PLAYING</span><span class="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i></span></div>
+            <div class="spotify-current">
+              <div class="spotify-art-wrap"><iframe id="spotifyEmbed" title="Trình phát Spotify" src="https://open.spotify.com/embed/track/5cF0dROlMOK5uNZtivgu50?utm_source=generator&amp;theme=1" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+              <div class="spotify-track-copy"><span class="song-number" id="spotifyTrackNumber">01 / 03</span><h3 id="spotifyTrackTitle">Attention</h3><p id="spotifyTrackArtist">Charlie Puth</p><a id="spotifyOpenLink" href="https://open.spotify.com/search/attention?flow_ctx=b5ce3cbc-3790-45bd-841b-01bd87fedafe%3A1792486353" target="_blank" rel="noopener noreferrer">Mở trên Spotify <span>↗</span></a></div>
+            </div>
+            <div class="spotify-controls"><button id="previousTrack" type="button" aria-label="Bài trước">⏮</button><span id="spotifyTrackCount">01 — 03</span><button id="nextTrack" type="button" aria-label="Bài tiếp theo">⏭</button></div>
+          </div>
+          <div class="spotify-track-list" aria-label="Danh sách bài hát">
+            <button class="spotify-track active" type="button" data-track="0"><span class="track-index">01</span><span><strong>Attention</strong><small>Charlie Puth</small></span><span class="track-play">▶</span></button>
+            <button class="spotify-track" type="button" data-track="1"><span class="track-index">02</span><span><strong>Từng Quen</strong><small>Wren Evans, itsnk</small></span><span class="track-play">▶</span></button>
+            <button class="spotify-track" type="button" data-track="2"><span class="track-index">03</span><span><strong>toxic till the end</strong><small>ROSÉ</small></span><span class="track-play">▶</span></button>
+          </div>
+          <p class="playlist-footnote">Dùng nút ⏮ / ⏭ để đổi bài. Nhạc được phát qua trình phát Spotify nhúng.</p>
         </div>
-      </div>
+      </div>div>
     </section>
 
     <section class="corner section-wrap reveal" id="corner">
