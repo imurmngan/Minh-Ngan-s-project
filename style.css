@@ -57,3 +57,5 @@ body.dark .quote-strip p{color:#a8d8ff}
 body.dark .quote-caption{color:#a1bdd5}
 @media(max-width:560px){.quote-strip{min-height:190px;padding:25px 16px}.quote-star-left{left:7%;top:18%;font-size:1.6rem}.quote-star-right{right:7%;bottom:15%;font-size:2rem}.quote-caption{max-width:220px}.star-field span:nth-child(2){left:5%}.paw-one{left:5%}.paw-two{right:6%}}
 @media(prefers-reduced-motion:reduce){.star-field span,.paw-print,.zodiac-symbol,.zodiac-orbit,.cat-face,.cat-orbit,.doodle-cat,.doodle-cat:after,.quote-strip p{animation:none!important}}
+
+.generated-star{position:absolute;z-index:2;pointer-events:none;color:#2c80c7;animation:starDrift 4.5s ease-in-out infinite}.hero-cat.cat-popped{animation:catPop .7s ease-out!important}@keyframes catPop{0%{transform:scale(1) rotate(0)}35%{transform:scale(1.07) rotate(-3deg)}65%{transform:scale(.98) rotate(3deg)}100%{transform:scale(1) rotate(0)}}body.dark .generated-star{color:#a8d8ff}
