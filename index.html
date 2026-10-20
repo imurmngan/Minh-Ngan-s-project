@@ -103,19 +103,19 @@
         </button>
         <div class="music-playlist" id="musicPlaylist" hidden>
           <div class="spotify-player">
-            <div class="spotify-topline"><span class="spotify-mark">●</span><span>NOW PLAYING</span><span class="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i></span></div>
+            <div class="spotify-topline"><span class="spotify-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 9.2c5.4-1.6 10.6-.9 15.6 2.1M5.2 13c4.5-1.2 8.8-.6 12.8 1.8M6.4 16.5c3.5-.8 6.8-.3 9.8 1.4"/></svg></span><span>NOW PLAYING</span><span class="equalizer" aria-hidden="true"><i></i><i></i><i></i><i></i></span></div>
             <div class="spotify-current">
               <div class="spotify-art-wrap"><iframe id="spotifyEmbed" title="Trình phát Spotify" src="https://open.spotify.com/embed/track/5cF0dROlMOK5uNZtivgu50?utm_source=generator&amp;theme=1" loading="lazy" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
               <div class="spotify-track-copy"><span class="song-number" id="spotifyTrackNumber">01 / 03</span><h3 id="spotifyTrackTitle">Attention</h3><p id="spotifyTrackArtist">Charlie Puth</p><a id="spotifyOpenLink" href="https://open.spotify.com/search/attention?flow_ctx=b5ce3cbc-3790-45bd-841b-01bd87fedafe%3A1792486353" target="_blank" rel="noopener noreferrer">Mở trên Spotify <span>↗</span></a></div>
             </div>
-            <div class="spotify-controls"><button id="previousTrack" type="button" aria-label="Bài trước">⏮</button><span id="spotifyTrackCount">01 — 03</span><button id="nextTrack" type="button" aria-label="Bài tiếp theo">⏭</button></div>
+            <div class="spotify-controls"><button id="previousTrack" type="button" aria-label="Bài trước" title="Bài trước"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5v14M19 6 9 12l10 6V6Z"/></svg></button><span id="spotifyTrackCount">01 — 03</span><button id="nextTrack" type="button" aria-label="Bài tiếp theo" title="Bài tiếp theo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 5v14M5 6l10 6-10 6V6Z"/></svg></button></div>
           </div>
           <div class="spotify-track-list" aria-label="Danh sách bài hát">
-            <button class="spotify-track active" type="button" data-track="0"><span class="track-index">01</span><span><strong>Attention</strong><small>Charlie Puth</small></span><span class="track-play">▶</span></button>
+            <button class="spotify-track active" type="button" data-track="0"><span class="track-index">01</span><span><strong>Attention</strong><small>Charlie Puth</small></span><span class="track-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5 19 12 8 18.5Z"/></svg></span></button>
             <button class="spotify-track" type="button" data-track="1"><span class="track-index">02</span><span><strong>Từng Quen</strong><small>Wren Evans, itsnk</small></span><span class="track-play">▶</span></button>
             <button class="spotify-track" type="button" data-track="2"><span class="track-index">03</span><span><strong>toxic till the end</strong><small>ROSÉ</small></span><span class="track-play">▶</span></button>
           </div>
-          <p class="playlist-footnote">Dùng nút ⏮ / ⏭ để đổi bài. Nhạc được phát qua trình phát Spotify nhúng.</p>
+          <p class="playlist-footnote">Dùng hai nút điều hướng hoặc chọn trực tiếp một bài trong danh sách. Nhạc được phát qua Spotify.</p>
         </div>
       </div>
     </section>
