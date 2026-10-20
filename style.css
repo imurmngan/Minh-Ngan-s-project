@@ -201,3 +201,35 @@ body.dark .spotify-track.active{background:#173f2b;border-color:#287c4b}
   .music-playlist{grid-template-columns:1fr}
   .spotify-track-list{margin-top:0}
 }
+
+
+/* Fun facts: interactive paper envelope */
+.fun-facts-content{min-width:0;padding-top:8px}
+.fun-facts-intro{max-width:560px;color:var(--muted);line-height:1.9;margin-bottom:22px}
+.envelope-scene{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:330px;padding:22px 12px 8px;overflow:hidden}
+.envelope-button{position:relative;isolation:isolate;display:block;width:min(100%,390px);height:235px;border:0;background:transparent;cursor:pointer;perspective:900px;-webkit-tap-highlight-color:transparent}
+.envelope-button:focus{outline:none}
+.envelope-button:focus-visible{outline:3px solid var(--blue);outline-offset:5px;border-radius:16px}
+.envelope-back{position:absolute;inset:auto 0 0;height:166px;background:linear-gradient(145deg,#c5e5ff,#a6d4fa);border:1px solid #8fc5f0;border-radius:13px 13px 16px 16px;box-shadow:0 18px 32px rgba(40,127,202,.16);z-index:1}
+.envelope-front{position:absolute;inset:auto 0 0;height:166px;border-radius:0 0 16px 16px;background:linear-gradient(145deg,#e7f5ff,#c6e5ff);clip-path:polygon(0 0,50% 58%,100% 0,100% 100%,0 100%);z-index:4;border-bottom:1px solid #9ccdf3}
+.envelope-flap{position:absolute;left:0;right:0;top:69px;height:166px;background:linear-gradient(160deg,#d5edff,#afd9fb);clip-path:polygon(0 0,100% 0,50% 63%);transform-origin:50% 0;transform:rotateX(0);transition:transform .65s cubic-bezier(.2,.75,.2,1),z-index 0s .3s;z-index:5;filter:drop-shadow(0 3px 2px rgba(40,127,202,.06))}
+.letter-paper{position:absolute;left:7%;right:7%;bottom:21px;min-height:166px;padding:22px 20px 18px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;background:#fffdf8;border:1px solid #e9e0cd;border-radius:8px;box-shadow:0 8px 22px rgba(31,82,120,.12);transform:translateY(95px) scale(.92);opacity:0;transition:transform .75s cubic-bezier(.18,.8,.2,1),opacity .35s ease;z-index:2;pointer-events:none}
+.paper-stamp{display:grid;place-items:center;width:36px;height:36px;border:1px dashed #80b6e0;border-radius:50%;color:#287fca;font:500 .62rem var(--mono);flex-shrink:0}
+.paper-fact{font-size:clamp(.8rem,1.5vw,.98rem);font-weight:600;line-height:1.75;color:#214c70;overflow-wrap:anywhere}
+.envelope-heart{position:absolute;left:50%;top:144px;transform:translateX(-50%);font-size:2rem;color:#438fd0;z-index:6;transition:opacity .25s,transform .3s;pointer-events:none;text-shadow:0 2px 0 rgba(255,255,255,.5)}
+.envelope-sparkle{position:absolute;color:var(--blue);font-size:1.5rem;z-index:0;animation:twinkle 2s ease-in-out infinite}
+.sparkle-left{left:4%;top:48px}.sparkle-right{right:4%;top:90px;animation-delay:-.8s}
+.envelope-button.is-open .letter-paper{transform:translateY(-58px) scale(1);opacity:1;z-index:3;transition-delay:.12s}
+.envelope-button.is-open .envelope-flap{transform:rotateX(180deg);z-index:0;transition:z-index 0s}
+.envelope-button.is-open .envelope-heart{opacity:0;transform:translateX(-50%) scale(.5)}
+.envelope-button.is-open .envelope-front{z-index:4}
+.envelope-hint{margin:5px 0 0;color:var(--blue);font:500 .62rem var(--mono);letter-spacing:.13em;text-align:center}
+.envelope-hint span{display:inline-block;margin-left:8px;transition:transform .2s}
+.envelope-button:hover~.envelope-hint span{transform:translate(3px,-3px)}
+body.dark .envelope-back{background:linear-gradient(145deg,#244d70,#1d4263);border-color:#38698f}
+body.dark .envelope-front{background:linear-gradient(145deg,#234d70,#1b3e5d);border-color:#38698f}
+body.dark .envelope-flap{background:linear-gradient(160deg,#2c5b80,#234a6c)}
+body.dark .letter-paper{background:#f8f4e9;border-color:#ded2b8}
+body.dark .paper-fact{color:#214c70}
+@media(max-width:560px){.envelope-scene{min-height:300px;padding-inline:0}.envelope-button{height:220px}.envelope-back,.envelope-front{height:155px}.envelope-flap{top:65px;height:155px}.letter-paper{left:5%;right:5%;min-height:155px;padding:18px 13px}.envelope-button.is-open .letter-paper{transform:translateY(-52px) scale(1)}.envelope-heart{top:135px}}
+@media(prefers-reduced-motion:reduce){.envelope-sparkle{animation:none}.envelope-flap,.letter-paper,.envelope-heart{transition:none!important}}
