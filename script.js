@@ -83,4 +83,22 @@
     });
     art.addEventListener('pointerleave', () => { art.style.backgroundPosition = ''; });
   }
+
+  // Mèo đeo tai nghe mở/đóng playlist yêu thích.
+  const musicCatButton = document.getElementById('musicCatButton');
+  const musicPlaylist = document.getElementById('musicPlaylist');
+  if (musicCatButton && musicPlaylist) {
+    musicCatButton.addEventListener('click', () => {
+      const willOpen = musicPlaylist.hidden;
+      musicPlaylist.hidden = !willOpen;
+      musicCatButton.setAttribute('aria-expanded', String(willOpen));
+      musicCatButton.classList.toggle('playlist-open', willOpen);
+      if (willOpen) {
+        musicPlaylist.querySelectorAll('.song-card').forEach((card, index) => {
+          card.style.animationDelay = (index * 90) + 'ms';
+        });
+      }
+    });
+  }
+
 })();
