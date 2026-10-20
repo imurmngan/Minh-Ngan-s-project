@@ -84,7 +84,7 @@
     art.addEventListener('pointerleave', () => { art.style.backgroundPosition = ''; });
   }
 
-  // Mèo đeo tai nghe mở/đóng playlist yêu thích.
+  // Mèo mở/đóng mini player; các nút đổi bài cập nhật trình phát Spotify.
   const musicCatButton = document.getElementById('musicCatButton');
   const musicPlaylist = document.getElementById('musicPlaylist');
   if (musicCatButton && musicPlaylist) {
@@ -93,12 +93,45 @@
       musicPlaylist.hidden = !willOpen;
       musicCatButton.setAttribute('aria-expanded', String(willOpen));
       musicCatButton.classList.toggle('playlist-open', willOpen);
-      if (willOpen) {
-        musicPlaylist.querySelectorAll('.song-card').forEach((card, index) => {
-          card.style.animationDelay = (index * 90) + 'ms';
-        });
-      }
     });
   }
+
+  const tracks = [
+    { title: 'Attention', artist: 'Charlie Puth', id: '5cF0dROlMOK5uNZtivgu50', url: 'https://open.spotify.com/search/attention?flow_ctx=b5ce3cbc-3790-45bd-841b-01bd87fedafe%3A1792486353' },
+    { title: 'Từng Quen', artist: 'Wren Evans, itsnk', id: '7f4Qg1YqBvgIDqyVdRZ4o4', url: 'https://open.spotify.com/intl-vi/album/2M0vYJZddXn6qRpeVtGvDZ' },
+    { title: 'toxic till the end', artist: 'ROSÉ', id: '3cgCBNO29q6BgxqHDA7peh', url: 'https://open.spotify.com/search/toxic%20till%20the%20end' }
+  ];
+  const spotifyEmbed = document.getElementById('spotifyEmbed');
+  const spotifyTrackNumber = document.getElementById('spotifyTrackNumber');
+  const spotifyTrackTitle = document.getElementById('spotifyTrackTitle');
+  const spotifyTrackArtist = document.getElementById('spotifyTrackArtist');
+  const spotifyOpenLink = document.getElementById('spotifyOpenLink');
+  const spotifyTrackCount = document.getElementById('spotifyTrackCount');
+  const trackButtons = Array.from(document.querySelectorAll('.spotify-track'));
+  let currentTrack = 0;
+
+  const selectTrack = (index) => {
+    if (!tracks.length) return;
+    currentTrack = (index + tracks.length) % tracks.length;
+    const track = tracks[currentTrack];
+    if (spotifyEmbed) {
+      spotifyEmbed.src = 'https://open.spotify.com/embed/track/' + track.id + '?utm_source=generator&theme=1';
+      spotifyEmbed.title = 'Trình phát Spotify — ' + track.title;
+    }
+    if (spotifyTrackNumber) spotifyTrackNumber.textContent = String(currentTrack + 1).padStart(2, '0') + ' / ' + String(tracks.length).padStart(2, '0');
+    if (spotifyTrackTitle) spotifyTrackTitle.textContent = track.title;
+    if (spotifyTrackArtist) spotifyTrackArtist.textContent = track.artist;
+    if (spotifyOpenLink) spotifyOpenLink.href = track.url;
+    if (spotifyTrackCount) spotifyTrackCount.textContent = String(currentTrack + 1).padStart(2, '0') + ' — ' + String(tracks.length).padStart(2, '0');
+    trackButtons.forEach((button, buttonIndex) => {
+      const active = buttonIndex === currentTrack;
+      button.classList.toggle('active', active);
+      if (active) button.setAttribute('aria-current', 'true');
+      else button.removeAttribute('aria-current');
+    });
+  };
+  document.getElementById('previousTrack')?.addEventListener('click', () => selectTrack(currentTrack - 1));
+  document.getElementById('nextTrack')?.addEventListener('click', () => selectTrack(currentTrack + 1));
+  trackButtons.forEach(button => button.addEventListener('click', () => selectTrack(Number(button.dataset.track))));
 
 })();
