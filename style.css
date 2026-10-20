@@ -172,3 +172,32 @@ body.dark .spotify-track.active{background:#173f2b;border-color:#287c4b}
 .playlist-footnote{margin-top:10px}
 @media(max-width:560px){.spotify-player{padding:13px}.spotify-current{grid-template-columns:1fr;gap:13px}.spotify-art-wrap,.spotify-art-wrap iframe{min-height:152px;height:152px}.spotify-track-copy{padding:0 2px}.spotify-track-copy h3{font-size:1.25rem}.spotify-controls{padding-top:10px}}
 @media(prefers-reduced-motion:reduce){.music-cat-button .headphone-cat,.music-cat-button:active .headphone-cat{animation:none!important}}
+
+
+/* Desktop-first music layout: player and queue sit side by side */
+@media(min-width:900px){
+  .music .music-content{min-width:0}
+  .music .music-intro{max-width:650px;margin-bottom:24px}
+  .music .music-cat-button{min-height:210px;max-width:100%}
+  .music-playlist{grid-template-columns:minmax(0,1.08fr) minmax(230px,.92fr);gap:16px;align-items:start}
+  .spotify-player{padding:20px}
+  .spotify-current{grid-template-columns:1fr;gap:14px}
+  .spotify-art-wrap,.spotify-art-wrap iframe{height:152px;min-height:152px}
+  .spotify-track-copy h3{font-size:1.45rem}
+  .spotify-track-list{margin-top:0;padding:7px;background:var(--paper);border:1px solid var(--line);border-radius:16px;gap:4px}
+  .spotify-track{grid-template-columns:26px minmax(0,1fr) 20px;padding:13px 10px;gap:8px}
+  .spotify-track strong{font-size:.78rem}
+  .spotify-track small{font-size:.66rem}
+  .track-play{display:grid;place-items:center}
+}
+.spotify-controls button{display:grid;place-items:center}
+.spotify-controls button svg{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.spotify-mark{display:inline-grid;place-items:center;width:22px;height:22px}
+.spotify-mark svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round}
+.track-play svg{width:17px;height:17px;fill:currentColor}
+.spotify-track:hover .track-play,.spotify-track.active .track-play{opacity:1}
+.spotify-controls button:active{transform:scale(.94)}
+@media(max-width:899px){
+  .music-playlist{grid-template-columns:1fr}
+  .spotify-track-list{margin-top:0}
+}
