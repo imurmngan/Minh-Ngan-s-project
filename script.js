@@ -151,4 +151,42 @@
     });
   });
 
+
+  // Fun facts: each opening reveals one randomly selected fact, verbatim.
+  const envelopeButton = document.getElementById('envelopeButton');
+  const funFactText = document.getElementById('funFactText');
+  const envelopeHint = document.getElementById('envelopeHint');
+  if (envelopeButton && funFactText) {
+    const funFacts = [
+      'I’m Catholic✝️',
+      'Có thể gọi mình là Mân Nghinh🎀',
+      'Tên tiếng Anh từ nhỏ tới lớn là Lucy🌷',
+      'Mình siu thích Hachiware và Momonga',
+      '90% cơ thể là nước mắt🥺',
+      'Ovtk giai đoạn cuối☠️',
+      'Siu thích các món có thịt bò ( bún bò, phở bò, beefsteak,…)🥩',
+      'Toi iu freeze trà xanh của Highlands🍵',
+      'I can be a coder👩‍💻, editor💻, dancer👯‍♀️, actress🎬, artist🎨, designer👩‍🎨, or just simply a girl🫣'
+    ];
+    let isEnvelopeOpen = false;
+    let previousFactIndex = -1;
+    envelopeButton.addEventListener('click', () => {
+      isEnvelopeOpen = !isEnvelopeOpen;
+      envelopeButton.classList.toggle('is-open', isEnvelopeOpen);
+      envelopeButton.setAttribute('aria-expanded', String(isEnvelopeOpen));
+      envelopeButton.setAttribute('aria-label', isEnvelopeOpen ? 'Đóng phong bì fun facts' : 'Mở phong bì fun facts');
+      if (isEnvelopeOpen) {
+        let nextIndex = Math.floor(Math.random() * funFacts.length);
+        if (funFacts.length > 1 && nextIndex === previousFactIndex) {
+          nextIndex = (nextIndex + 1 + Math.floor(Math.random() * (funFacts.length - 1))) % funFacts.length;
+        }
+        previousFactIndex = nextIndex;
+        funFactText.textContent = funFacts[nextIndex];
+        if (envelopeHint) envelopeHint.innerHTML = 'CLOSE THE LETTER <span aria-hidden="true">↙</span>';
+      } else {
+        if (envelopeHint) envelopeHint.innerHTML = 'OPEN A LITTLE SECRET <span aria-hidden="true">↗</span>';
+      }
+    });
+  }
+
 })();
