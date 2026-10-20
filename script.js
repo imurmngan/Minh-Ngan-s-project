@@ -130,8 +130,25 @@
       else button.removeAttribute('aria-current');
     });
   };
-  document.getElementById('previousTrack')?.addEventListener('click', () => selectTrack(currentTrack - 1));
-  document.getElementById('nextTrack')?.addEventListener('click', () => selectTrack(currentTrack + 1));
-  trackButtons.forEach(button => button.addEventListener('click', () => selectTrack(Number(button.dataset.track))));
+  const previousButton = document.getElementById('previousTrack');
+  const nextButton = document.getElementById('nextTrack');
+
+  // Delegated click handlers are resilient to styling/layout changes on desktop.
+  if (previousButton) previousButton.addEventListener('click', event => {
+    event.preventDefault();
+    event.stopPropagation();
+    selectTrack(currentTrack - 1);
+  });
+  if (nextButton) nextButton.addEventListener('click', event => {
+    event.preventDefault();
+    event.stopPropagation();
+    selectTrack(currentTrack + 1);
+  });
+  trackButtons.forEach(button => {
+    button.addEventListener('click', event => {
+      event.preventDefault();
+      selectTrack(Number(button.dataset.track));
+    });
+  });
 
 })();
