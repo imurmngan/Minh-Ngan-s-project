@@ -174,6 +174,8 @@
     const factText = document.getElementById('funFactText');
     const hint = document.getElementById('envelopeHint');
     envelopeButton.classList.toggle('is-open', isEnvelopeOpen);
+    const factsSection = document.getElementById('fun-facts');
+    if (factsSection) factsSection.classList.toggle('fact-revealed', isEnvelopeOpen);
     envelopeButton.setAttribute('aria-expanded', String(isEnvelopeOpen));
     envelopeButton.setAttribute('aria-label', isEnvelopeOpen ? 'Đóng phong bì fun facts' : 'Mở phong bì fun facts');
     if (isEnvelopeOpen && factText) {
