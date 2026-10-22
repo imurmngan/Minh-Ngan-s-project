@@ -310,3 +310,6 @@ body.dark .buddy-ear,body.dark .fact-cat-ear{background:#cce7ff}
  .person-cat-buddy,.buddy-tail,.buddy-spark,.buddy-eye,.fact-cat-buddy,.fact-cat-tail,.fact-cat-star,.fact-cat-eye,.envelope-scene:before,.envelope-scene:after{animation:none!important}
  .envelope-button.is-open .letter-paper{animation:none!important}
 }
+
+/* Keep the envelope and its cat side-by-side on wide screens. */
+.envelope-scene{flex-direction:row}
