@@ -238,3 +238,75 @@ body.dark .paper-fact{color:#214c70}
 .envelope-button.is-open .letter-paper{z-index:6}
 .envelope-button{touch-action:manipulation}
 .envelope-button>*{pointer-events:none}
+
+
+/* Animated cat companions for The Person + Fun facts */
+.about-content{position:relative}
+.person-cat-buddy{position:relative;width:210px;height:145px;margin:-12px 8px 18px auto;animation:personCatBob 4.4s ease-in-out infinite;transform-origin:50% 85%}
+.buddy-face{position:absolute;z-index:3;left:63px;top:28px;width:91px;height:82px;border:2px solid #4b91c8;border-radius:44% 44% 48% 48%;background:linear-gradient(145deg,#fff,#dcefff);box-shadow:inset -9px -7px 0 #7fb8e222,0 10px 18px #287fca1f}
+.buddy-ear{position:absolute;z-index:2;top:17px;width:34px;height:40px;background:#e4f3ff;border:2px solid #4b91c8;clip-path:polygon(50% 0,100% 100%,0 100%);border-radius:9px}
+.buddy-ear-left{left:67px;transform:rotate(-12deg)}.buddy-ear-right{left:117px;transform:rotate(12deg)}
+.buddy-ear:after{content:"";position:absolute;inset:10px 8px 4px;background:#f3b6ce;clip-path:polygon(50% 0,100% 100%,0 100%)}
+.buddy-eye{position:absolute;top:31px;width:7px;height:10px;border-radius:50%;background:#285b83;animation:buddyBlink 5s infinite}.buddy-eye-left{left:23px}.buddy-eye-right{right:23px}
+.buddy-nose{position:absolute;top:45px;left:42px;width:8px;height:6px;background:#e9a0bd;clip-path:polygon(0 0,100% 0,50% 100%)}
+.buddy-blush{position:absolute;top:48px;width:13px;height:7px;background:#f5b8d0;border-radius:50%;opacity:.8}.buddy-blush-left{left:11px}.buddy-blush-right{right:11px}
+.buddy-whiskers{position:absolute;top:49px;width:19px;height:12px;border-top:1.5px solid #76a9d0}.buddy-whiskers-left{left:-8px;transform:rotate(9deg)}.buddy-whiskers-right{right:-8px;transform:rotate(-9deg)}
+.buddy-whiskers:after,.buddy-whiskers:before{content:"";position:absolute;top:5px;width:19px;border-top:1.5px solid #76a9d0}.buddy-whiskers:before{top:10px;width:14px}
+.buddy-paw{position:absolute;z-index:4;top:91px;width:34px;height:23px;border:2px solid #4b91c8;border-radius:50%;background:#f7fcff}.buddy-paw-left{left:62px;transform:rotate(16deg)}.buddy-paw-right{left:121px;transform:rotate(-16deg)}
+.buddy-tail{position:absolute;z-index:1;left:144px;top:78px;width:43px;height:35px;border:7px solid #4b91c8;border-left-color:transparent;border-bottom-color:transparent;border-radius:50%;transform:rotate(25deg);transform-origin:0 100%;animation:buddyTail 2.5s ease-in-out infinite}
+.buddy-spark{position:absolute;color:var(--blue);animation:buddySpark 2.2s ease-in-out infinite}.buddy-spark-one{left:31px;top:42px;font-size:1.2rem}.buddy-spark-two{right:10px;top:18px;font-size:1.5rem;animation-delay:-1s}
+.buddy-caption{position:absolute;bottom:0;left:44px;color:var(--muted);font:500 .58rem var(--mono);letter-spacing:.04em;white-space:nowrap}
+.fun-facts-content{position:relative}
+.envelope-scene{position:relative;min-height:365px;display:flex;align-items:center;justify-content:center;gap:clamp(12px,3vw,42px);padding:14px 8px 4px;isolation:isolate}
+.envelope-scene:before,.envelope-scene:after{content:"";position:absolute;z-index:-1;border:1px solid #5fa4db30;border-radius:50%;pointer-events:none}
+.envelope-scene:before{width:310px;height:310px;right:4%;top:22px;animation:secretOrbit 28s linear infinite}
+.envelope-scene:after{width:245px;height:245px;right:calc(4% + 32px);top:54px;border-style:dashed;animation:secretOrbit 36s linear infinite reverse}
+.envelope-stage{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;flex:1;min-width:0}
+.envelope-button{filter:drop-shadow(0 8px 18px #3782be10);transition:filter .3s,transform .3s}.envelope-button:hover{filter:drop-shadow(0 13px 22px #3782be29);transform:translateY(-3px)}.envelope-button.is-open:hover{transform:translateY(-1px)}
+.envelope-button.is-open .letter-paper{animation:letterPop .65s .12s both}
+.envelope-sparkle{filter:drop-shadow(0 0 7px #287fca33)}.envelope-button.is-open .sparkle-left{animation:secretSparkle .85s ease-out both}.envelope-button.is-open .sparkle-right{animation:secretSparkle .85s .12s ease-out both}
+.fact-cat-buddy{position:relative;flex:0 0 180px;height:215px;align-self:center;animation:factCatFloat 4s ease-in-out infinite;transform-origin:50% 85%}
+.fact-cat-body{position:absolute;left:42px;top:105px;width:98px;height:75px;border:2px solid #4b91c8;border-radius:47% 47% 35% 35%;background:linear-gradient(140deg,#fff,#dcefff);box-shadow:inset -10px -6px 0 #7fb8e222,0 14px 24px #287fca21}
+.fact-cat-head{position:absolute;z-index:3;left:37px;top:44px;width:108px;height:91px;border:2px solid #4b91c8;border-radius:46% 46% 48% 48%;background:linear-gradient(145deg,#fff,#e4f3ff);box-shadow:inset -8px -6px 0 #7fb8e224,0 9px 18px #287fca1a}
+.fact-cat-ear{position:absolute;z-index:2;top:29px;width:42px;height:49px;background:#e4f3ff;border:2px solid #4b91c8;clip-path:polygon(50% 0,100% 100%,0 100%);border-radius:9px}.fact-ear-left{left:42px;transform:rotate(-12deg)}.fact-ear-right{left:101px;transform:rotate(12deg)}
+.fact-cat-ear:after{content:"";position:absolute;inset:12px 10px 5px;background:#f1b4cd;clip-path:polygon(50% 0,100% 100%,0 100%)}
+.fact-cat-eye{position:absolute;top:34px;width:8px;height:12px;background:#285b83;border-radius:50%;animation:buddyBlink 5s infinite}.fact-eye-left{left:27px}.fact-eye-right{right:27px}
+.fact-cat-nose{position:absolute;top:50px;left:49px;width:8px;height:6px;background:#e9a0bd;clip-path:polygon(0 0,100% 0,50% 100%)}
+.fact-cat-mouth{position:absolute;top:56px;left:44px;width:18px;height:9px;border-bottom:2px solid #719fc4;border-radius:50%}
+.fact-cat-cheek{position:absolute;top:55px;width:14px;height:8px;border-radius:50%;background:#f3b3ce;opacity:.82}.fact-cheek-left{left:10px}.fact-cheek-right{right:10px}
+.fact-cat-whiskers{position:absolute;top:57px;width:19px;height:13px;border-top:1.5px solid #79a9cf}.fact-whiskers-left{left:-9px;transform:rotate(9deg)}.fact-whiskers-right{right:-9px;transform:rotate(-9deg)}
+.fact-cat-whiskers:after,.fact-cat-whiskers:before{content:"";position:absolute;top:5px;width:18px;border-top:1.5px solid #79a9cf}.fact-cat-whiskers:before{top:10px;width:14px}
+.fact-cat-tail{position:absolute;z-index:0;left:126px;top:111px;width:47px;height:50px;border:8px solid #4b91c8;border-left-color:transparent;border-bottom-color:transparent;border-radius:50%;transform:rotate(18deg);transform-origin:10% 90%;animation:buddyTail 2.2s ease-in-out infinite}
+.fact-cat-scarf{position:absolute;z-index:4;left:58px;top:126px;width:66px;height:16px;background:#a9d9ff;border:2px solid #4b91c8;border-radius:5px 5px 12px 12px;transform:rotate(2deg)}
+.fact-cat-scarf:after{content:"";position:absolute;right:4px;top:9px;width:13px;height:18px;background:#f2b4cf;border:1.5px solid #4b91c8;clip-path:polygon(0 0,100% 0,90% 100%,50% 72%,10% 100%)}
+.fact-cat-star{position:absolute;z-index:5;color:var(--blue);animation:buddySpark 2.3s ease-in-out infinite}.fact-star-one{left:8px;top:48px;font-size:1.3rem}.fact-star-two{right:0;top:30px;font-size:1.7rem;animation-delay:-.8s}.fact-star-three{right:4px;bottom:36px;font-size:1.2rem;animation-delay:-1.4s}
+.fact-cat-label{position:absolute;left:28px;bottom:0;width:125px;text-align:center;color:var(--muted);font:500 .57rem var(--mono);letter-spacing:.08em}
+.fun-facts.fact-revealed .fact-cat-buddy{animation:catCheer .85s cubic-bezier(.2,.8,.2,1),factCatFloat 4s .85s ease-in-out infinite}.fun-facts.fact-revealed .fact-cat-star{animation:secretSparkle .85s ease-out both}
+@keyframes personCatBob{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-7px) rotate(2deg)}}
+@keyframes buddyTail{0%,100%{transform:rotate(20deg)}50%{transform:rotate(-8deg)}}
+@keyframes buddyBlink{0%,44%,48%,100%{transform:scaleY(1)}46%{transform:scaleY(.1)}}
+@keyframes buddySpark{0%,100%{opacity:.48;transform:translateY(0) scale(.9) rotate(-8deg)}50%{opacity:1;transform:translateY(-7px) scale(1.12) rotate(10deg)}}
+@keyframes factCatFloat{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-9px) rotate(2deg)}}
+@keyframes secretOrbit{to{transform:rotate(360deg)}}
+@keyframes letterPop{0%{filter:brightness(1);transform:translateY(12px) scale(.96)}45%{filter:brightness(1.06);transform:translateY(-66px) scale(1.025)}100%{filter:brightness(1);transform:translateY(-58px) scale(1)}}
+@keyframes secretSparkle{0%{opacity:0;transform:scale(.3) rotate(-40deg)}35%{opacity:1;transform:scale(1.4) rotate(15deg)}100%{opacity:.65;transform:scale(1) rotate(0)}}
+@keyframes catCheer{0%{transform:translateY(0) rotate(0)}35%{transform:translateY(-18px) rotate(-8deg)}65%{transform:translateY(2px) rotate(7deg)}100%{transform:translateY(0) rotate(0)}}
+body.dark .buddy-face,body.dark .buddy-paw,body.dark .fact-cat-head,body.dark .fact-cat-body{background:linear-gradient(145deg,#e7f4ff,#b9d9f5)}
+body.dark .buddy-ear,body.dark .fact-cat-ear{background:#cce7ff}
+@media(max-width:720px){
+ .person-cat-buddy{margin:-4px 0 18px auto;transform:scale(.9);transform-origin:right center}
+ .envelope-scene{gap:0;min-height:350px}.fact-cat-buddy{flex-basis:120px;transform:scale(.78);transform-origin:center right;margin-right:-12px}
+ .envelope-stage{flex:1}.envelope-scene:before{width:250px;height:250px;right:0;top:38px}.envelope-scene:after{width:195px;height:195px;right:27px;top:65px}
+ .envelope-button{width:min(100%,330px)}
+}
+@media(max-width:460px){
+ .envelope-scene{align-items:center;gap:0;padding-inline:0}.fact-cat-buddy{flex-basis:88px;transform:scale(.62);transform-origin:center right;margin-right:-25px;margin-left:-8px}
+ .envelope-stage{flex-basis:calc(100% - 70px)}.envelope-button{height:220px}
+ .envelope-button.is-open .letter-paper{transform:translateY(-52px) scale(1);animation:letterPopMobile .65s .12s both}
+ .envelope-scene:before{width:205px;height:205px;right:-4px;top:60px}.envelope-scene:after{width:160px;height:160px;right:18px;top:83px}
+}
+@keyframes letterPopMobile{0%{transform:translateY(12px) scale(.96)}45%{transform:translateY(-60px) scale(1.02)}100%{transform:translateY(-52px) scale(1)}}
+@media(prefers-reduced-motion:reduce){
+ .person-cat-buddy,.buddy-tail,.buddy-spark,.buddy-eye,.fact-cat-buddy,.fact-cat-tail,.fact-cat-star,.fact-cat-eye,.envelope-scene:before,.envelope-scene:after{animation:none!important}
+ .envelope-button.is-open .letter-paper{animation:none!important}
+}
